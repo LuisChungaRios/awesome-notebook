@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div>
+      <ul>
+        <li v-for="notebook in notebooks" :key="notebook.id">
+          <p>{{ notebook.title }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <button @click="addNote">add Note</button>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapGetters, mapMutations } from "vuex";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: "App",
+  computed: {
+    ...mapGetters("notebook", ["notebooks"])
+  },
+  methods: {
+    ...mapMutations("notebook", ["addNote"])
   }
-}
+};
 </script>
 
 <style>
