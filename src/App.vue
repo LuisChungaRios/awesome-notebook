@@ -1,22 +1,12 @@
 <template>
-  <div id="app">
-    <div>
-      <ul>
-        <li v-for="notebook in notebooks" :key="notebook.id">
-          <p>{{ notebook.title }}</p>
-        </li>
-      </ul>
-    </div>
-
-    <div>
-      <button @click="addNote">add Note</button>
-    </div>
+  <div id="app" class="container-fluid mt-3">
+    <NoteComponent />
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
-
+import NoteComponent from "./components/Note";
 export default {
   name: "App",
   computed: {
@@ -24,6 +14,9 @@ export default {
   },
   methods: {
     ...mapMutations("notebook", ["addNote"])
+  },
+  components: {
+    NoteComponent
   }
 };
 </script>
