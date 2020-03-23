@@ -1,11 +1,12 @@
 const mutations = {
   addNote(state) {
+    const id = state.notebooks.length + 1;
     state.notebooks.push({
-      title: "my note title",
+      title: `my note title ${id}`,
       content: "my awesome note",
       favorite: false,
       created_at: Date.now(),
-      id: state.notebooks.length + 1
+      id
     });
   },
   deleteNote(state, notebook_id) {

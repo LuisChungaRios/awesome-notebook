@@ -2,34 +2,38 @@
   <div class="col-sm-12 col-md-4 note-container">
     <div class="row mb-4">
       <div class="col-sm-4 col-md-4 offset-sm-4">
-        <button class="btn btn-success btn-block">
+        <button class="btn btn-success btn-block" @click.prevent="addNote()">
           <b-icon icon="plus"></b-icon> Notes
         </button>
       </div>
     </div>
-    <div class="row note-list mb-1">
-      <div class="col-7">
-        <label for="">Item 1</label>
-        <!-- <input type="text" class="form-control" /> -->
-      </div>
-
-      <div class="col-5 d-flex justify-content-around">
-        <button class="btn">
-          <b-icon icon="star" variant="warning"></b-icon>
-        </button>
-        <button class="btn">
-          <b-icon icon="pencil" variant="danger"></b-icon>
-        </button>
-        <button class="btn">
-          <b-icon icon="dash-square-fill" variant="danger"></b-icon>
-        </button>
-      </div>
+    <div class="container">
+      <NoteListItem
+        v-for="notebook in notebooks"
+        :key="notebook.id"
+        :notebook="notebook"
+      />
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { mapMutations, mapGetters } from "vuex";
+
+import NoteListItem from "./NoteListItem";
+
+export default {
+  components: {
+    NoteListItem
+  },
+  name: "NoteList",
+  methods: {
+    ...mapMutations("notebook", ["addNote"])
+  },
+  computed: {
+    ...mapGetters("notebook", ["notebooks"])
+  }
+};
 </script>
 <style scoped>
 .note-container {

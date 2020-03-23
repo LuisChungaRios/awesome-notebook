@@ -7,11 +7,11 @@
 </template>
 <script>
 import NoteList from "./NoteList";
-
 export default {
   components: {
     NoteList
-  }
+  },
+  name: "Note"
 };
 </script>
 <style></style>
