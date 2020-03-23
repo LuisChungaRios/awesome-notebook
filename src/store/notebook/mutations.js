@@ -4,7 +4,7 @@ const mutations = {
     state.notebooks.push({
       title: `my note title ${id}`,
       content: "my awesome note",
-      favorite: false,
+      favourite: false,
       created_at: Date.now(),
       id
     });
@@ -27,6 +27,16 @@ const mutations = {
     );
 
     state.notebooks[index].content = contentNotebookSelected;
+  },
+  updateTitle(state, { title, id }) {
+    const index = state.notebooks.findIndex(notebook => notebook.id === id);
+
+    state.notebooks[index].title = title;
+  },
+  changeFavouriteNote(state, { id }) {
+    const index = state.notebooks.findIndex(notebook => notebook.id === id);
+
+    state.notebooks[index].favourite = !state.notebooks[index].favourite;
   }
 };
 
