@@ -1,15 +1,20 @@
 <template>
   <div class="row">
     <NoteList />
-    <div class="col-sm-12 col-md-4"></div>
-    <div class="col-sm-12 col-md-4"></div>
+    <NoteText />
+    <NoteRenderText />
   </div>
 </template>
 <script>
 import NoteList from "./NoteList";
+import NoteText from "./NoteText";
+import NoteRenderText from "./NoteRenderText";
+
 export default {
   components: {
-    NoteList
+    NoteList,
+    NoteText,
+    NoteRenderText
   },
   name: "Note"
 };

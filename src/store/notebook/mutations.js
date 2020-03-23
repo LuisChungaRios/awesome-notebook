@@ -17,6 +17,16 @@ const mutations = {
     if (indexDelete != -1) {
       state.notebooks.splice(indexDelete, 1);
     }
+  },
+  setSelectedNote(state, noteSelected) {
+    state.selectedNote = noteSelected;
+  },
+  setContentNotebookSelected(state, contentNotebookSelected) {
+    const index = state.notebooks.findIndex(
+      notebook => notebook.id === state.selectedNote.id
+    );
+
+    state.notebooks[index].content = contentNotebookSelected;
   }
 };
 

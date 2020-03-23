@@ -1,5 +1,9 @@
 const state = {
-  notebooks: []
+  notebooks: [],
+  selectedNote: {
+    title: "default",
+    content: "default"
+  }
 };
 
 export default state;
