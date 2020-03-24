@@ -1,6 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
 import { BootstrapVue, BootstrapVueIcons } from "bootstrap-vue";
+
 import store from "./store";
 
 //Css Bootstrap
@@ -11,6 +12,8 @@ import "bootstrap-vue/dist/bootstrap-vue.css";
 // CSS Bootstrap Icons
 
 import "bootstrap-vue/dist/bootstrap-vue-icons.css";
+
+import "highlight.js/styles/atom-one-dark.css";
 
 Vue.config.productionTip = false;
 Vue.use(BootstrapVue);

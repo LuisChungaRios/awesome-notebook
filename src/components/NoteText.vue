@@ -34,3 +34,14 @@ export default {
   }
 };
 </script>
+<style>
+textarea {
+  flex: auto 1 1;
+  overflow: auto;
+  resize: none;
+  border: none;
+  box-sizing: border-box;
+  margin: 0 4px;
+  font-family: monospace;
+}
+</style>
