@@ -1,7 +1,7 @@
 <template>
   <div class="col-sm-12 col-md-4 note-container">
     <div class="row mb-4">
-      <div class="col-sm-4 col-md-4 offset-sm-4">
+      <div class="col-sm-4 col-md-4 offset-sm-4 p-2">
         <button class="btn btn-success btn-block" @click.prevent="addNote">
           <b-icon icon="plus"></b-icon> Notes
         </button>

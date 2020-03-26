@@ -1,12 +1,23 @@
 <template>
-  <div id="app" class="container-fluid mt-3">
-    <NoteComponent />
+  <div id="app" class="m-0 p-0">
+      <div>
+       <Header />
+      </div>
+     <div class="container-fluid">
+      <NoteComponent />
+    </div>
+    <div>
+       <Footer />
+    </div>
   </div>
 </template>
 
 <script>
 import { mapGetters, mapMutations } from "vuex";
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 import NoteComponent from "./components/Note";
+
 export default {
   name: "App",
   computed: {
@@ -16,7 +27,10 @@ export default {
     ...mapMutations("notebook", ["addNote"])
   },
   components: {
-    NoteComponent
+    Header,
+    NoteComponent,
+    Footer
+    
   }
 };
 </script>

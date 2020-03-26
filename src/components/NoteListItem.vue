@@ -1,6 +1,6 @@
 <template>
   <div class="row note-list mb-1">
-    <div class="col-lg-7 p-0 border-5 bg-light border-aqua" @click="changeSelectedNote(notebook)">
+    <div class="col-lg-7 col-xs-12 p-0 border-5 bg-light border-aqua" @click="changeSelectedNote(notebook)">
       <label v-if="!showInput" @dblclick="changeInput" style="cursor:pointer; font-size: 19.8px;">
         {{ notebook.title }}
       </label>
@@ -13,7 +13,7 @@
       />
     </div>
 
-    <div class="col-5 d-flex justify-content-around linea-1">
+    <div class="col-lg-5 col-xs-12 d-flex justify-content-around linea-1">
       <button class="btn" @click="changeFavouriteNote(notebook)">
         <b-icon
           :icon="notebook.favourite ? 'star-fill' : 'star'"
@@ -92,7 +92,7 @@ export default {
     border: 1.5px solid transparent;  
     border-radius: 0.5rem;
     border-color: #28a745;
-    padding: 0px 10px;
+    
     
 }
 .linea-1 button:hover {
